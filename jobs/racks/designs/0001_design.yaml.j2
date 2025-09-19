@@ -1,0 +1,38 @@
+---
+racks:
+  - model: dcim.rack
+    data:
+      name: "{{ rack_name }}"
+      site: "{{ site_name }}"
+
+devices:
+  - model: dcim.device
+    data:
+      name: "{{ device_name }}"
+      site: "{{ site_name }}"
+      rack: "{{ rack_name }}"
+      device_type: "{{ devicetype_model }}"
+      role: "{{ devicerole_name }}"
+      manufacturer: "{{ manufacturer_name }}"
+
+interfaces:
+{% for ifc in interfaces %}
+  - model: dcim.interface
+    data:
+      device: "{{ device_name }}"
+      name: "{{ ifc.name }}"
+      type: "{{ ifc.type | default('1gbase-t') }}"
+      enabled: true
+{% endfor %}
+
+ip-addresses:
+{% for binding in ip_bindings %}
+  - model: ipam.ipaddress
+    data:
+      address: "{{ binding.address }}"
+      status: "active"
+      assigned_object_type: "dcim.interface"
+      assigned_object:
+        device: "{{ device_name }}"
+        name: "{{ binding.if_name }}"
+{% endfor %}
