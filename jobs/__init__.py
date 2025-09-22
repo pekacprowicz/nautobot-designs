@@ -6,6 +6,6 @@ from .racks import RacksDesign
 
 __all__ = [
     "CoreSiteDesign",
-    "Pool",
-    "RacksDesign",
+    "PoolCreateDesign",
+    "BuildRackSwitchDesign",
 ]
