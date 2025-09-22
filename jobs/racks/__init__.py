@@ -2,6 +2,8 @@
 from nautobot.apps.jobs import register_jobs, StringVar, JSONVar
 from nautobot_design_builder.design_job import DesignJob
 
+from .context import RacksCreationContext
+
 class BuildRackSwitchDesign(DesignJob):
     class Meta:
         name = "Build Rack + Switch"

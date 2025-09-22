@@ -1,6 +1,8 @@
 
 from nautobot.apps.jobs import register_jobs, StringVar, IPNetworkVar
 from nautobot_design_builder.design_job import DesignJob
+from .context import PoolCreationContext
+
 
 class PoolCreateDesign(DesignJob):
     
