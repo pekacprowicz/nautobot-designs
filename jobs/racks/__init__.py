@@ -1,7 +1,6 @@
-from nautobot.apps.jobs import register_jobs
-from nautobot.apps.jobs.design import DesignJob
-from nautobot.apps.jobs import StringVar, JSONVar
 
+from nautobot.apps.jobs import register_jobs, StringVar, JSONVar
+from nautobot_design_builder.design_job import DesignJob
 
 class BuildRackSwitchDesign(DesignJob):
     class Meta:
