@@ -2,4 +2,4 @@
 prefixes:
   - prefix: "{{ pool_cidr }}"
     status: "{{ status | default('active') }}"
-    p_description: "{{ description | default('IP Pool created via Design Job') }}"
+    description: "{{ p_description | default('IP Pool created via Design Job') }}"
