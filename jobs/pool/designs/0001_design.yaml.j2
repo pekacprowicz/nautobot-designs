@@ -1,7 +1,5 @@
 ---
 prefixes:
-  - model: ipam.prefix
-    data:
-      prefix: "{{ pool_cidr }}"
-      status: "{{ status | default('active') }}"
-      p_description: "{{ description | default('IP Pool created via Design Job') }}"
+  - prefix: "{{ pool_cidr }}"
+    status: "{{ status | default('active') }}"
+    p_description: "{{ description | default('IP Pool created via Design Job') }}"
