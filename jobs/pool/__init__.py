@@ -16,7 +16,7 @@ class PoolCreateDesign(DesignJob):
         description="Prefix status (e.g. active, reserved, deprecated)",
         default="active"
     )
-    description = StringVar(
+    p_description = StringVar(
         description="Description for the pool",
         default="IP Pool created via Design Job"
     )
