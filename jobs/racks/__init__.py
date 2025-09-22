@@ -6,6 +6,9 @@ class BuildRackSwitchDesign(DesignJob):
     class Meta:
         name = "Build Rack + Switch"
         description = "Design Job to create a rack, switch, interfaces, and assign IPs."
+        design_file = "designs/0001_design.yaml.j2"
+        context_class = RacksCreationContext
+        nautobot_version = ">=2"
 
     # Location
     site_name = StringVar(

@@ -3,9 +3,13 @@ from nautobot.apps.jobs import register_jobs, StringVar, IPNetworkVar
 from nautobot_design_builder.design_job import DesignJob
 
 class PoolCreateDesign(DesignJob):
+    
     class Meta:
         name = "Create IP Pool"
         description = "Design Job to create an IP prefix pool in IPAM."
+        design_file = "designs/0001_design.yaml.j2"
+        context_class = PoolCreationContext
+        nautobot_version = ">=2"
 
     # Variables exposed to the Jinja template
     pool_cidr = IPNetworkVar(
