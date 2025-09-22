@@ -37,14 +37,14 @@ class BuildRackSwitchDesign(DesignJob):
 
     # Interfaces list (JSON for structured data)
     interfaces = JSONVar(
-        label="Interfaces"
+        label="Interfaces",
         description="List of interfaces (JSON array of objects, e.g. [{'name': 'eth1'}, {'name': 'eth2'}])",
         default=[{"name": "eth1"}, {"name": "eth2"}]
     )
 
     # IP bindings (interface → address)
     ip_bindings = JSONVar(
-        label="IP bindings"
+        label="IP bindings",
         description="List of IP bindings (e.g. [{'if_name': 'eth1', 'address': '10.0.0.1/8'}])",
         default=[{"if_name": "eth1", "address": "10.0.0.1/8"}]
     )
