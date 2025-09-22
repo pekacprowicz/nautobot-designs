@@ -9,40 +9,42 @@ class BuildRackSwitchDesign(DesignJob):
 
     # Location
     site_name = StringVar(
-        description="Site name (will be created if missing)",
+        label="Site name",
         default="LAB-WAW1"
     )
     rack_name = StringVar(
-        description="Rack name (will be created if missing)",
+        label="Rack name",
         default="RACK-01"
     )
 
     # Device
     device_name = StringVar(
-        description="Device name",
+        label="Device name",
         default="sw01"
     )
     manufacturer_name = StringVar(
-        description="Manufacturer",
+        label="Manufacturer",
         default="Generic"
     )
     devicetype_model = StringVar(
-        description="DeviceType model",
+        label="DeviceType model",
         default="Generic Switch 48p"
     )
     devicerole_name = StringVar(
-        description="Device role",
+        label="Device role",
         default="switch"
     )
 
     # Interfaces list (JSON for structured data)
     interfaces = JSONVar(
+        label="Interfaces"
         description="List of interfaces (JSON array of objects, e.g. [{'name': 'eth1'}, {'name': 'eth2'}])",
         default=[{"name": "eth1"}, {"name": "eth2"}]
     )
 
     # IP bindings (interface → address)
     ip_bindings = JSONVar(
+        label="IP bindings"
         description="List of IP bindings (e.g. [{'if_name': 'eth1', 'address': '10.0.0.1/8'}])",
         default=[{"if_name": "eth1", "address": "10.0.0.1/8"}]
     )
