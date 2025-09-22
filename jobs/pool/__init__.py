@@ -22,5 +22,4 @@ class PoolCreateDesign(DesignJob):
         default="IP Pool created via Design Job"
     )
 
-
 register_jobs(PoolCreateDesign)
